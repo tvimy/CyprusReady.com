@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyprusReady — Personalised Relocation Reports for Digital Nomads</title>
+<meta name="description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax — delivered in minutes. €19.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #111D35;
+    --navy-mid: #243357;
+    --gold: #D4A843;
+    --gold-light: #E8C06A;
+    --gold-pale: #F5E6C0;
+    --cream: #FAF7F0;
+    --white: #FFFFFF;
+    --grey: #6B7280;
+    --grey-light: #F3F4F6;
+    --text: #1a1a2e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(27, 42, 74, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-deep);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(212, 168, 67, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(36, 51, 87, 0.8) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212, 168, 67, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 168, 67, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(212, 168, 67, 0.12);
+    border: 1px solid rgba(212, 168, 67, 0.3);
+    padding: 6px 14px;
+    border-radius: 3px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 40px;
+    font-weight: 300;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 18px 36px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(212, 168, 67, 0.3);
+  }
+
+  .btn-primary .arrow { transition: transform 0.2s; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  .hero-price-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.02em;
+  }
+
+  /* Hero right — stats */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .stat-card:nth-child(1) { animation-delay: 0.2s; }
+  .stat-card:nth-child(2) { animation-delay: 0.35s; }
+  .stat-card:nth-child(3) { animation-delay: 0.5s; }
+  .stat-card:nth-child(4) { animation-delay: 0.65s; }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(212, 168, 67, 0.12);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .stat-text strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .stat-text span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem {
+    background: var(--white);
+    padding: 100px 40px;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .problem h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    max-width: 700px;
+  }
+
+  .problem-intro {
+    font-size: 1.05rem;
+    color: var(--grey);
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 60px;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .problem-col {
+    padding: 48px;
+  }
+
+  .problem-col.bad { background: #FDF2F2; border-right: 1px solid #E5E7EB; }
+  .problem-col.good { background: #F0F7F4; }
+
+  .problem-col-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bad .problem-col-label { color: #DC2626; }
+  .good .problem-col-label { color: #059669; }
+
+  .problem-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .problem-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #374151;
+  }
+
+  .problem-list li .icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    background: var(--cream);
+    padding: 100px 40px;
+  }
+
+  .how h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 60px;
+    line-height: 1.2;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .step {
+    background: var(--white);
+    padding: 48px 40px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .step h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--grey);
+  }
+
+  /* ── WHAT YOU GET ── */
+  .what {
+    background: var(--navy-deep);
+    padding: 100px 40px;
+  }
+
+  .what h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .what-intro {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 56px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  .what-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .what-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .what-item:hover {
+    border-color: rgba(212, 168, 67, 0.3);
+    background: rgba(212, 168, 67, 0.04);
+  }
+
+  .what-item-icon {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .what-item h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .what-item p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  /* ── REPORT PREVIEW ── */
+  .preview {
+    background: var(--white);
+    padding: 100px 40px;
+  }
+
+  .preview h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+  }
+
+  .preview-intro {
+    font-size: 1rem;
+    color: var(--grey);
+    margin-bottom: 48px;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .report-mock {
+    background: var(--cream);
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 800px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  }
+
+  .report-mock-header {
+    background: var(--navy-deep);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .report-mock-header span {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .report-mock-header .badge {
+    margin-left: auto;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .report-mock-body {
+    padding: 36px 36px 28px;
+  }
+
+  .report-section {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .report-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .report-section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .report-section-content {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .report-section-content strong { color: var(--navy-deep); }
+
+  .report-blur {
+    filter: blur(5px);
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .report-cta-overlay {
+    text-align: center;
+    padding: 8px 0 20px;
+    font-size: 0.85rem;
+    color: var(--grey);
+  }
+
+  /* ── PRICING ── */
+  .pricing {
+    background: var(--cream);
+    padding: 100px 40px;
+    text-align: center;
+  }
+
+  .pricing h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+  }
+
+  .pricing-intro {
+    font-size: 1rem;
+    color: var(--grey);
+    margin-bottom: 48px;
+    line-height: 1.6;
+  }
+
+  .price-card {
+    background: var(--white);
+    border: 2px solid var(--navy-deep);
+    border-radius: 12px;
+    padding: 52px 48px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    position: relative;
+    box-shadow: 6px 6px 0px var(--navy-deep);
+  }
+
+  .price-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--navy-deep);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-tag sup {
+    font-size: 1.8rem;
+    vertical-align: super;
+    font-weight: 700;
+  }
+
+  .price-desc {
+    font-size: 0.85rem;
+    color: var(--grey);
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+
+  .price-includes {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-includes li {
+    font-size: 0.9rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .price-includes li .check {
+    color: #059669;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .price-guarantee {
+    font-size: 0.8rem;
+    color: var(--grey);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--white);
+    padding: 100px 40px;
+  }
+
+  .faq h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 48px;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 900px;
+  }
+
+  .faq-item { }
+
+  .faq-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .faq-item p {
+    font-size: 0.875rem;
+    color: var(--grey);
+    line-height: 1.7;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--navy-deep);
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212, 168, 67, 0.07) 0%, transparent 70%);
+  }
+
+  .final-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.15;
+    position: relative;
+  }
+
+  .final-cta h2 em { color: var(--gold); font-style: normal; }
+
+  .final-cta p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 44px;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .final-cta .btn-primary { margin: 0 auto; position: relative; font-size: 1.05rem; padding: 20px 44px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .logo {
+    font-family: 'Playfair Display', serif;
+    color: rgba(255,255,255,0.4);
+    font-size: 1rem;
+  }
+
+  footer .logo span { color: var(--gold); }
+
+  footer p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left { animation: fadeUp 0.7s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-right { display: none; }
+    .problem, .how, .what, .preview, .pricing, .faq, .final-cta { padding: 72px 20px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .problem-col.bad { border-right: none; border-bottom: 1px solid #E5E7EB; }
+    .steps { grid-template-columns: 1fr; }
+    .what-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .price-card { padding: 36px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .what-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Cyprus<span>Ready</span></div>
+  <a href="#pricing" class="nav-cta">Get Your Report — €19</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label">For Digital Nomads · Cyprus 3–12 Month Stays</div>
+      <h1>Know exactly where to live in Cyprus <em>before you book anything.</em></h1>
+      <p class="hero-sub">Stop wasting hours on outdated Reddit threads and generic travel blogs. Get a personalised relocation report built around your budget, work setup, and lifestyle — delivered in minutes.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn-primary">
+          Start My Relocation Report
+          <span class="arrow">→</span>
+        </a>
+        <p class="hero-price-note">One-time payment · €19 · No subscription · Report delivered instantly</p>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-icon">🏙️</div>
+        <div class="stat-text">
+          <strong>4 cities. 16 neighbourhoods.</strong>
+          <span>Every major area analysed and compared</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-text">
+          <strong>Personalised to your answers</strong>
+          <span>Not a generic guide — built around your situation</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💶</div>
+        <div class="stat-text">
+          <strong>Real cost breakdowns</strong>
+          <span>Rent, food, transport — no guessing</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📋</div>
+        <div class="stat-text">
+          <strong>Visa & tax overview included</strong>
+          <span>EU and non-EU pathways covered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="section-inner">
+    <span class="section-label">The Problem</span>
+    <h2>Relocating to Cyprus shouldn't feel like detective work.</h2>
+    <p class="problem-intro">Most people spend weeks trying to piece together reliable information from sources that are outdated, generic, or written for tourists — not people planning to actually live there.</p>
+    <div class="problem-grid">
+      <div class="problem-col bad">
+        <div class="problem-col-label">
+          <span>✕</span> What you're doing now
+        </div>
+        <ul class="problem-list">
+          <li><span class="icon">✕</span> Googling the same questions and getting contradictory answers</li>
+          <li><span class="icon">✕</span> Reading Reddit threads from 3 years ago</li>
+          <li><span class="icon">✕</span> Watching YouTube vlogs that show the highlights, not the reality</li>
+          <li><span class="icon">✕</span> Asking in Facebook groups and getting 12 different opinions</li>
+          <li><span class="icon">✕</span> Still not sure which city — or even which neighbourhood</li>
+          <li><span class="icon">✕</span> Worried you'll make an expensive mistake</li>
+        </ul>
+      </div>
+      <div class="problem-col good">
+        <div class="problem-col-label">
+          <span>✓</span> What CyprusReady gives you
+        </div>
+        <ul class="problem-list">
+          <li><span class="icon">✓</span> One clear city and neighbourhood recommendation, explained</li>
+          <li><span class="icon">✓</span> Accurate, current cost of living breakdown for your budget</li>
+          <li><span class="icon">✓</span> Visa and residency overview matched to your citizenship</li>
+          <li><span class="icon">✓</span> Internet quality and coworking options in your area</li>
+          <li><span class="icon">✓</span> Honest risks and what to watch out for</li>
+          <li><span class="icon">✓</span> 5 concrete next steps — so you know exactly what to do</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-inner">
+    <span class="section-label">How It Works</span>
+    <h2>Three steps. Done in under 15 minutes.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Pay once. €19.</h3>
+        <p>One flat fee. No subscription. No upsell hidden behind a paywall. You pay, you get your report. That's the entire transaction.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Fill in a short survey.</h3>
+        <p>25 targeted questions about your budget, work setup, lifestyle, citizenship, and priorities. Takes 5–10 minutes. The more specific you are, the sharper your report.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Get your personalised report.</h3>
+        <p>Your report is generated and delivered to your inbox as a structured, formatted document. Read it. Use it. Make your decision with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="what">
+  <div class="section-inner">
+    <span class="section-label" style="color: var(--gold);">What's In Your Report</span>
+    <h2>Every section that matters. Nothing that doesn't.</h2>
+    <p class="what-intro">Your report covers nine structured sections, each written specifically for your answers. No filler. No generic advice.</p>
+    <div class="what-grid">
+      <div class="what-item">
+        <span class="what-item-icon">🏙️</span>
+        <h4>Recommended City & Neighbourhood</h4>
+        <p>One clear recommendation with the reasoning behind it, plus a backup option.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">💶</span>
+        <h4>Monthly Budget Breakdown</h4>
+        <p>Rent, food, transport, leisure — broken down for your specific area and lifestyle.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">📡</span>
+        <h4>Internet & Coworking</h4>
+        <p>Reliability ratings, named coworking spaces, and café working culture in your area.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">🏠</span>
+        <h4>Housing Advice</h4>
+        <p>What to expect for your preferred rental type, lease terms, and where to find listings.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">🛂</span>
+        <h4>Visa & Residency Overview</h4>
+        <p>Relevant pathways based on your citizenship and length of stay. Clear, plain English.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">📊</span>
+        <h4>Tax Considerations</h4>
+        <p>High-level overview of Cyprus tax advantages relevant to your situation, including Non-Dom.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">🌅</span>
+        <h4>Lifestyle Fit</h4>
+        <p>Social scene, nightlife, food, beach access, green space — matched to your preferences.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">⚠️</span>
+        <h4>Risks & Things to Watch Out For</h4>
+        <p>Honest, specific risks for your profile and chosen area. No sugarcoating.</p>
+      </div>
+      <div class="what-item">
+        <span class="what-item-icon">✅</span>
+        <h4>Your Next 5 Steps</h4>
+        <p>Concrete, prioritised actions to take right now. Leave knowing exactly what to do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPORT PREVIEW -->
+<section class="preview">
+  <div class="section-inner">
+    <span class="section-label">Sample Report</span>
+    <h2>This is what you'll receive.</h2>
+    <p class="preview-intro">A structured, readable document — not a wall of AI text. Every section directly tied to your answers.</p>
+    <div class="report-mock">
+      <div class="report-mock-header">
+        <span>CyprusReady — Personalised Relocation Report</span>
+        <div class="badge">Sample</div>
+      </div>
+      <div class="report-mock-body">
+        <div class="report-section">
+          <div class="report-section-title">Recommended City & Neighbourhood</div>
+          <div class="report-section-content">
+            Based on your answers, <strong>Neapolis, Limassol</strong> is your strongest match. You prioritised walkability, fast internet, and access to a coworking community — Neapolis delivers all three. It sits within a 10-minute walk of Limassol's main coworking hubs, has consistently high fibre coverage, and hosts the largest concentration of remote workers and expats on the island. Your backup option is <strong>Engomi, Nicosia</strong> — quieter, slightly cheaper, and with excellent internet infrastructure, though you'd sacrifice beach access entirely.
+          </div>
+        </div>
+        <div class="report-section">
+          <div class="report-section-title">Estimated Monthly Budget Breakdown</div>
+          <div class="report-section-content">
+            <strong>Rent (Neapolis, furnished 1BR):</strong> €1,000–€1,300 &nbsp;·&nbsp; <strong>Food & groceries:</strong> €300–€400 &nbsp;·&nbsp; <strong>Transport (no car):</strong> €80–€120 &nbsp;·&nbsp; <strong>Leisure & dining out:</strong> €250–€400<br><br>
+            <strong>Estimated total: €1,650–€2,200/month.</strong> Summer months (July–August) see short-term rental prices spike 20–35% — locking in a lease before June is strongly advised.
+          </div>
+        </div>
+        <div class="report-section report-blur">
+          <div class="report-section-title">Visa & Residency Overview</div>
+          <div class="report-section-content">
+            As an EU citizen planning a 6–9 month stay, you have the right to reside in Cyprus without a visa for the full duration. You are not required to register formally for stays under 3 months, but for stays exceeding 3 months you should obtain a Registration Certificate (MEU1 form) from the Civil Registry and Migration Department...
+          </div>
+        </div>
+        <div class="report-section report-blur">
+          <div class="report-section-title">Tax Considerations</div>
+          <div class="report-section-content">
+            Cyprus operates one of the most favourable tax regimes in the EU for relocating professionals. The Non-Domiciled (Non-Dom) resident status exempts qualifying individuals from tax on dividends and interest income for 17 years. To qualify, you must become a Cyprus tax resident by spending more than 183 days...
+          </div>
+        </div>
+      </div>
+      <div class="report-cta-overlay">🔒 Full report unlocked after purchase — including Visa, Tax, Housing, Risks & Next Steps</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner" style="display:flex; flex-direction:column; align-items:center;">
+    <span class="section-label">Pricing</span>
+    <h2>Simple. One price. No surprises.</h2>
+    <p class="pricing-intro">€19 is less than one hour of bad decisions costs you. If you're moving to Cyprus for 3–12 months, the cost of choosing the wrong city or neighbourhood is measured in weeks of disruption and thousands in wasted rent.</p>
+    <div class="price-card">
+      <div class="price-tag"><sup>€</sup>19</div>
+      <p class="price-desc">One-time payment · Instant report delivery · No subscription</p>
+      <ul class="price-includes">
+        <li><span class="check">✓</span> Full personalised relocation report</li>
+        <li><span class="check">✓</span> City & neighbourhood recommendation</li>
+        <li><span class="check">✓</span> Detailed monthly cost breakdown</li>
+        <li><span class="check">✓</span> Visa & residency overview</li>
+        <li><span class="check">✓</span> Tax considerations overview</li>
+        <li><span class="check">✓</span> Internet & coworking guide</li>
+        <li><span class="check">✓</span> Housing advice & platforms</li>
+        <li><span class="check">✓</span> Honest risks & next steps</li>
+        <li><span class="check">✓</span> Delivered as a formatted Google Doc</li>
+      </ul>
+      <!-- REPLACE href BELOW WITH YOUR STRIPE PAYMENT LINK WHEN READY -->
+      <a href="#" class="btn-primary" style="width:100%; font-size:1rem;">
+        Start My Relocation Report →
+      </a>
+      <p class="price-guarantee">🔒 Secure payment via Stripe &nbsp;·&nbsp; Report delivered to your inbox within minutes</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-inner">
+    <span class="section-label">Questions</span>
+    <h2>Straight answers.</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Is this just ChatGPT with a Cyprus prompt?</h4>
+        <p>No. The report is generated using a structured Cyprus-specific database covering 16 neighbourhoods across 4 cities, combined with your exact survey answers. Generic AI gives generic output. CyprusReady is calibrated specifically for 3–12 month digital nomad stays in Cyprus.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How fast will I receive my report?</h4>
+        <p>Within minutes of submitting your survey. You'll receive an email with a link to your formatted report document. There's no manual review process — it's generated and delivered automatically.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is the visa and tax information accurate?</h4>
+        <p>It is accurate as a high-level overview and starting point. It is not legal or financial advice. For formal visa applications or tax planning, consult a qualified professional in Cyprus. We're clear about this in every report.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I already know which city I want?</h4>
+        <p>The report still delivers value — it will confirm your choice with data, or highlight trade-offs you may not have considered. The neighbourhood-level breakdown and budget analysis alone are worth the €19.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you cover all cities in Cyprus?</h4>
+        <p>We cover Limassol, Paphos, Larnaca, and Nicosia — the four cities most relevant to digital nomads. We go deep on each rather than spreading thin across the whole island.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I'm not satisfied?</h4>
+        <p>If your report is delivered and genuinely fails to address your survey answers, contact us and we'll make it right. We stand behind the quality of what we produce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <h2>Stop guessing.<br><em>Start knowing.</em></h2>
+  <p>One decision made with confidence pays for itself many times over.<br>Your personalised Cyprus relocation report. €19. Done in minutes.</p>
+  <a href="#pricing" class="btn-primary">Start My Relocation Report →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Cyprus<span>Ready</span></div>
+  <p>Not legal or financial advice · © 2025 CyprusReady · All rights reserved</p>
+</footer>
+
+</body>
+</html>
