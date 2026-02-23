@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Confirmed — CyprusReady</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #111D35;
+    --gold: #D4A843;
+    --gold-light: #E8C06A;
+    --cream: #FAF7F0;
+    --white: #FFFFFF;
+    --grey: #6B7280;
+    --green: #059669;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy-deep);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    overflow-x: hidden;
+  }
+
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212,168,67,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,168,67,0.04) 1px, transparent 1px);
+    background-size: 55px 55px;
+    pointer-events: none;
+  }
+
+  .bg-glow {
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(5,150,105,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(17,29,53,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212,168,67,0.1);
+    z-index: 10;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .logo span { color: var(--gold); }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .check-circle {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(5,150,105,0.12);
+    border: 2px solid rgba(5,150,105,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+    font-size: 2.2rem;
+    animation: popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(5,150,105,0.1);
+    border: 1px solid rgba(5,150,105,0.25);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  h1 em { color: var(--gold); font-style: normal; }
+
+  .subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+
+  .steps-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 36px 32px;
+    margin-bottom: 36px;
+    text-align: left;
+  }
+
+  .steps-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .step-row:last-child { margin-bottom: 0; }
+
+  .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-num.done {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  .step-text strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+
+  .step-text span {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(212,168,67,0.3);
+    margin: 0 auto 36px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 18px 40px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    margin-bottom: 16px;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(212,168,67,0.25);
+  }
+
+  .cta-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 44px;
+  }
+
+  .what-to-expect {
+    background: rgba(212,168,67,0.06);
+    border: 1px solid rgba(212,168,67,0.2);
+    border-radius: 10px;
+    padding: 28px 28px;
+    text-align: left;
+    margin-bottom: 36px;
+  }
+
+  .what-to-expect h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .expect-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .expect-list li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .expect-list li span { color: var(--gold); flex-shrink: 0; }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .steps-card { padding: 24px 20px; }
+    .what-to-expect { padding: 20px; }
+    .cta-btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<nav>
+  <div class="logo">Cyprus<span>Ready</span></div>
+</nav>
+
+<div class="content">
+
+  <div class="check-circle">✓</div>
+
+  <div class="badge">Payment confirmed</div>
+
+  <h1>You're one step away from<br><em>total clarity.</em></h1>
+
+  <p class="subtitle">Your payment has been received. Now fill in your personalised survey — it takes 5–10 minutes and is what makes your report specific to you, not a generic guide.</p>
+
+  <div class="steps-card">
+    <div class="steps-title">Here's where you are</div>
+
+    <div class="step-row">
+      <div class="step-num done">✓</div>
+      <div class="step-text">
+        <strong>Payment complete</strong>
+        <span>€19 received. You're locked in.</span>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Fill in your survey — 5 to 10 minutes</strong>
+        <span>25 targeted questions about your budget, work setup, lifestyle, and priorities. The more specific you are, the sharper your report.</span>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Receive your personalised report</strong>
+        <span>Your report is generated and delivered to your inbox as a formatted document. Usually within a few minutes of submitting.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPLACE href BELOW WITH YOUR GOOGLE FORM LINK -->
+  <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="cta-btn">
+    Start My Survey →
+  </a>
+  <p class="cta-note">Opens your personalised 25-question survey · Takes 5–10 minutes</p>
+
+  <div class="what-to-expect">
+    <h3>What your report will cover</h3>
+    <ul class="expect-list">
+      <li><span>🏙️</span> Your recommended city and neighbourhood — and exactly why it fits you</li>
+      <li><span>💶</span> A real monthly cost breakdown for your specific area and lifestyle</li>
+      <li><span>📡</span> Internet reliability and named coworking spaces in your area</li>
+      <li><span>🏠</span> Housing advice and where to find listings for your rental type</li>
+      <li><span>🛂</span> Visa and residency overview matched to your citizenship and stay length</li>
+      <li><span>📊</span> Tax considerations including Cyprus Non-Dom status if relevant</li>
+      <li><span>⚠️</span> Honest risks specific to your profile and chosen area</li>
+      <li><span>✅</span> 5 concrete next steps to take right now</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:0.8rem; color:rgba(255,255,255,0.25); line-height:1.6;">
+    Questions? Reply to your payment confirmation email or contact us directly.<br>
+    Not legal or financial advice · CyprusReady © 2025
+  </p>
+
+</div>
+
+<footer>CyprusReady · Personalised relocation intelligence for digital nomads</footer>
+
+</body>
+</html>
