@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promote CyprusReady — Get Your Affiliate Link</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy:#111D35; --gold:#D4A843; --cream:#FAF7F0; --grey:#6B7280; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--navy); min-height:100vh; }
+
+nav { background:var(--navy); padding:20px 48px; display:flex; align-items:center; }
+.logo { font-family:'Playfair Display',serif; font-size:1.3rem; color:#fff; text-decoration:none; }
+.logo span { color:var(--gold); }
+
+.hero { background:var(--navy); padding:88px 48px 80px; text-align:center; }
+.eyebrow { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+.hero h1 { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(2.4rem,5vw,4rem); color:#fff; line-height:1.08; max-width:680px; margin:0 auto 20px; }
+.hero h1 em { color:var(--gold); font-style:normal; }
+.hero p { font-size:1.05rem; color:rgba(255,255,255,0.45); max-width:480px; margin:0 auto; line-height:1.75; }
+
+.steps-section { padding:80px 48px; max-width:900px; margin:0 auto; }
+.steps-section h2 { font-family:'Playfair Display',serif; font-size:1.8rem; text-align:center; margin-bottom:48px; }
+.steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:28px; }
+.step { background:#fff; border:1px solid #E5E7EB; padding:32px 24px; }
+.step-num { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:var(--gold); margin-bottom:14px; }
+.step h3 { font-size:0.95rem; font-weight:700; margin-bottom:8px; }
+.step p { font-size:0.88rem; color:var(--grey); line-height:1.65; }
+
+.form-section { background:var(--navy); padding:88px 48px; }
+.form-inner { max-width:480px; margin:0 auto; }
+.form-inner h2 { font-family:'Playfair Display',serif; font-size:2rem; color:#fff; margin-bottom:8px; }
+.form-inner > p { font-size:0.9rem; color:rgba(255,255,255,0.35); margin-bottom:40px; line-height:1.6; }
+
+.field { margin-bottom:18px; }
+.field label { display:block; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+.field input { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:13px 15px; font-family:'DM Sans',sans-serif; font-size:1rem; outline:none; transition:border-color 0.2s; -webkit-appearance:none; }
+.field input::placeholder { color:rgba(255,255,255,0.2); }
+.field input:focus { border-color:var(--gold); }
+
+.btn-submit { width:100%; margin-top:8px; background:var(--gold); color:var(--navy); border:none; padding:15px; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; transition:opacity 0.2s; }
+.btn-submit:hover { opacity:0.88; }
+.btn-submit:disabled { opacity:0.35; cursor:default; }
+
+.result { display:none; margin-top:40px; }
+.result.show { display:block; }
+.result-box { border:1px solid rgba(212,168,67,0.25); background:rgba(212,168,67,0.06); padding:36px 32px; }
+.result-box h3 { font-family:'Playfair Display',serif; font-size:1.4rem; color:#fff; margin-bottom:24px; }
+.link-label { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:8px; }
+.link-box { background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08); padding:14px 16px; font-family:'DM Sans',sans-serif; font-size:0.82rem; color:var(--gold); word-break:break-all; line-height:1.5; margin-bottom:14px; user-select:all; }
+.btn-copy { background:transparent; border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.55); padding:10px 22px; font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; }
+.btn-copy:hover { border-color:var(--gold); color:var(--gold); }
+.result-note { font-size:0.82rem; color:rgba(255,255,255,0.3); margin-top:20px; line-height:1.7; }
+.result-note strong { color:rgba(255,255,255,0.5); font-weight:600; }
+
+.err { display:none; color:#F87171; font-size:0.85rem; margin-top:12px; line-height:1.5; }
+.err.show { display:block; }
+
+footer { background:var(--navy); text-align:center; padding:28px 48px; font-size:0.78rem; color:rgba(255,255,255,0.18); border-top:1px solid rgba(255,255,255,0.05); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Cyprus<span>Ready</span></a>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Affiliate Programme</div>
+  <h1>Help people move smarter.<br><em>Track every signup.</em></h1>
+  <p>Get a unique link. Share it with your audience. Every waitlist signup through your link is logged to your code — automatically.</p>
+</section>
+
+<section class="steps-section">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Register below</h3>
+      <p>Enter your name and email. You get a unique code tied to you in our database.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Share your link</h3>
+      <p>Post it anywhere — Twitter, Reddit, a newsletter, a forum. Your link, your audience.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Signups are tracked</h3>
+      <p>Every time someone joins the waitlist through your link, it's logged against your code in a separate database.</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="form-inner">
+    <h2>Get your link</h2>
+    <p>Takes 10 seconds. Re-registering with the same email always returns your existing code.</p>
+
+    <div id="formArea">
+      <div class="field">
+        <label for="aff-name">Your name</label>
+        <input type="text" id="aff-name" placeholder="e.g. Alex" autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label for="aff-email">Your email</label>
+        <input type="email" id="aff-email" placeholder="you@email.com" autocomplete="email">
+      </div>
+      <button class="btn-submit" id="submitBtn" onclick="register()">Generate my link →</button>
+      <div class="err" id="errMsg"></div>
+    </div>
+
+    <div class="result" id="result">
+      <div class="result-box">
+        <h3>Your referral link</h3>
+        <div class="link-label">Share this URL</div>
+        <div class="link-box" id="linkDisplay"></div>
+        <button class="btn-copy" id="copyBtn" onclick="copyLink()">Copy link</button>
+        <p class="result-note">
+          <strong>This link is yours permanently.</strong> Every waitlist signup through it is logged in a separate Affiliates database, tied to your email. Re-register with the same email any time to retrieve your code.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 CyprusReady</footer>
+
+<script>
+const SCRIPT_URL   = "https://script.google.com/macros/s/AKfycbyH5kxJLQyfee7YCG1tP0LB2uDktVLLH0YcTd6suU5YsRPjcCdFhZ1xwGOKUsxnl-20/exec";
+const WAITLIST_URL = "https://tvimy.github.io/CyprusReady.com/waitlist.html";
+let myLink = "";
+
+async function register() {
+  const name  = document.getElementById("aff-name").value.trim();
+  const email = document.getElementById("aff-email").value.trim();
+  const btn   = document.getElementById("submitBtn");
+  const err   = document.getElementById("errMsg");
+  err.classList.remove("show");
+
+  if (!name)                        { showErr("Please enter your name."); return; }
+  if (!email || !email.includes("@")) { showErr("Please enter a valid email."); return; }
+
+  btn.disabled = true;
+  btn.textContent = "Generating…";
+
+  try {
+    const res  = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "affiliate", name, email })
+    });
+    const data = await res.json();
+
+    if (data.status === "ok" || data.status === "exists") {
+      myLink = WAITLIST_URL + "?ref=" + data.code;
+      document.getElementById("linkDisplay").textContent = myLink;
+      document.getElementById("result").classList.add("show");
+      const fa = document.getElementById("formArea");
+      fa.style.transition = "opacity 0.3s";
+      fa.style.opacity = "0.22";
+      fa.style.pointerEvents = "none";
+    } else {
+      throw new Error(data.message || "Server error");
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = "Generate my link →";
+    showErr("Something went wrong — " + e.message + ". Please try again.");
+  }
+
+  function showErr(msg) { err.textContent = msg; err.classList.add("show"); }
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(myLink).then(() => {
+    const b = document.getElementById("copyBtn");
+    b.textContent = "Copied ✓";
+    setTimeout(() => b.textContent = "Copy link", 2200);
+  });
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && document.getElementById("formArea").style.pointerEvents !== "none") register();
+});
+</script>
+</body>
+</html>
