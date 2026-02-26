@@ -148,7 +148,6 @@ async function register() {
   try {
     const res  = await fetch(SCRIPT_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ action: "affiliate", name, email })
     });
     const data = await res.json();
