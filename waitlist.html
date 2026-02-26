@@ -184,7 +184,7 @@ async function joinWaitlist() {
   try {
     const res = await fetch(SCRIPT_URL, {
       method: "POST",
-      body: JSON.stringify({
+      body: new URLSearchParams({
         action:    "waitlist",
         email:     email,
         timestamp: new Date().toISOString(),
