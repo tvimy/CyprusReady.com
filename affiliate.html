@@ -146,11 +146,12 @@ async function register() {
   btn.textContent = "Generating…";
 
   try {
-    const res  = await fetch(SCRIPT_URL, {
-      method: "POST",
-      body: new URLSearchParams({ action: "affiliate", name, email })
-    });
-    const data = await res.json();
+    // Use GET — Apps Script handles GET without redirect issues
+    const url = SCRIPT_URL + "?action=affiliate&name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email);
+    const res  = await fetch(url);
+    const text = await res.text();
+    console.log("Raw response:", text);
+    const data = JSON.parse(text);
 
     if (data.status === "ok" || data.status === "exists") {
       myLink = WAITLIST_URL + "?ref=" + data.code;
@@ -166,7 +167,7 @@ async function register() {
   } catch(e) {
     btn.disabled = false;
     btn.textContent = "Generate my link →";
-    showErr("Something went wrong — " + e.message + ". Please try again.");
+    showErr("Error: " + e.message);
   }
 
   function showErr(msg) { err.textContent = msg; err.classList.add("show"); }
