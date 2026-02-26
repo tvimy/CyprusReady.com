@@ -148,7 +148,7 @@ async function register() {
   try {
     const res  = await fetch(SCRIPT_URL, {
       method: "POST",
-      body: JSON.stringify({ action: "affiliate", name, email })
+      body: new URLSearchParams({ action: "affiliate", name, email })
     });
     const data = await res.json();
 
