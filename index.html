@@ -1,112 +1,130 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CyprusReady â€” Personalised Relocation Reports for Digital Nomads</title>
-<meta name="description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax â€” delivered in minutes. â‚¬19.">
+<title>CyprusReady &mdash; Personalised Relocation Reports for Digital Nomads</title>
+<meta name="description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax &mdash; delivered in minutes. &euro;19.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cyprusready.it.com/">
-<meta property="og:title" content="CyprusReady — Personalised Relocation Reports for Digital Nomads">
-<meta property="og:description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax — delivered in minutes. €19.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CyprusReady — Personalised Relocation Reports for Digital Nomads">
-<meta name="twitter:description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax — delivered in minutes. €19.">
+<meta property="og:url" content="https://cyprusready.it.com">
+<meta property="og:title" content="CyprusReady &mdash; Personalised Relocation Reports for Digital Nomads">
+<meta property="og:description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax &mdash; delivered in minutes. &euro;19.">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://cyprusready.it.com">
+<meta property="twitter:title" content="CyprusReady &mdash; Personalised Relocation Reports for Digital Nomads">
+<meta property="twitter:description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax &mdash; delivered in minutes. &euro;19.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #1B2A4A;
-    --navy-deep: #111D35;
-    --navy-mid: #243357;
-    --gold: #D4A843;
-    --gold-light: #E8C06A;
-    --gold-pale: #F5E6C0;
-    --cream: #FAF7F0;
-    --white: #FFFFFF;
-    --grey: #6B7280;
-    --grey-light: #F3F4F6;
-    --text: #1a1a2e;
+    --navy:       #0D1C33;
+    --navy-mid:   #152840;
+    --navy-light: #1C3354;
+    --gold:       #C8A45A;
+    --gold-light: #DCBA78;
+    --gold-pale:  #EDD9A8;
+    --cream:      #F5F1E9;
+    --white:      #FFFFFF;
+    --off-white:  #FCFAF6;
+    --text:       #16213E;
+    --muted:      #647082;
+    --light:      #9CA3AF;
+    --border:     #E4DDD2;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--text);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* â”€â”€ NAV â”€â”€ */
+  /* ── UTILITIES ── */
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    padding: 20px 40px;
+    padding: 22px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(27, 42, 74, 0.97);
+    background: rgba(13, 28, 51, 0.97);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+    border-bottom: 1px solid rgba(200, 164, 90, 0.15);
   }
-
   .nav-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--white);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
   }
-
   .nav-logo span { color: var(--gold); }
-
   .nav-cta {
-    background: var(--gold);
-    color: var(--navy-deep);
+    background: transparent;
+    color: var(--gold);
     padding: 10px 24px;
-    border-radius: 4px;
-    font-size: 0.875rem;
+    border: 1px solid rgba(200, 164, 90, 0.6);
+    font-size: 0.75rem;
     font-weight: 600;
     text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
   }
 
-  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-  /* â”€â”€ HERO â”€â”€ */
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    background: var(--navy-deep);
+    background: var(--navy);
     position: relative;
     display: flex;
     align-items: center;
+    padding: 130px 48px 100px;
     overflow: hidden;
-    padding: 120px 40px 80px;
   }
-
-  .hero-bg {
+  .hero::before {
+    content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(212, 168, 67, 0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(36, 51, 87, 0.8) 0%, transparent 60%);
+      radial-gradient(ellipse 65% 55% at 78% 48%, rgba(200, 164, 90, 0.07) 0%, transparent 65%),
+      radial-gradient(ellipse 45% 65% at 10% 95%, rgba(21, 40, 64, 0.95) 0%, transparent 55%);
+    pointer-events: none;
   }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(212, 168, 67, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212, 168, 67, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
   .hero-inner {
     position: relative;
     max-width: 1100px;
@@ -117,665 +135,575 @@
     gap: 80px;
     align-items: center;
   }
-
-  .hero-label {
-    display: inline-block;
-    font-size: 0.75rem;
+  .hero-eyebrow {
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.12);
-    border: 1px solid rgba(212, 168, 67, 0.3);
-    padding: 6px 14px;
-    border-radius: 3px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-size: clamp(2.6rem, 4.2vw, 3.9rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.08;
     color: var(--white);
-    margin-bottom: 24px;
-    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
   }
-
-  .hero h1 em {
-    color: var(--gold);
-    font-style: normal;
-  }
-
+  .hero h1 em { color: var(--gold); font-style: normal; }
   .hero-sub {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 40px;
+    font-size: 1.05rem;
+    line-height: 1.78;
+    color: rgba(255,255,255,0.52);
+    margin-bottom: 44px;
     font-weight: 300;
-    max-width: 480px;
+    max-width: 460px;
   }
-
-  .hero-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+  .hero-actions { display: flex; flex-direction: column; gap: 14px; }
 
   .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     background: var(--gold);
-    color: var(--navy-deep);
-    padding: 18px 36px;
-    border-radius: 4px;
-    font-size: 1rem;
+    color: var(--navy);
+    padding: 18px 38px;
+    font-size: 0.8rem;
     font-weight: 700;
     text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: all 0.2s;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
     border: none;
     cursor: pointer;
     width: fit-content;
   }
-
-  .btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(212, 168, 67, 0.3);
-  }
-
-  .btn-primary .arrow { transition: transform 0.2s; }
-  .btn-primary:hover .arrow { transform: translateX(4px); }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-primary svg { transition: transform 0.2s; flex-shrink: 0; }
+  .btn-primary:hover svg { transform: translateX(4px); }
 
   .hero-price-note {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.02em;
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.04em;
+    font-weight: 300;
   }
 
-  .btn-waitlist {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.55);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
-    width: fit-content;
+  /* Hero right — stat lines */
+  .hero-stats { display: flex; flex-direction: column; }
+  .stat-line {
+    padding: 22px 0 22px 24px;
+    border-left: 1px solid rgba(200, 164, 90, 0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: border-left-color 0.25s;
   }
-
-  .btn-waitlist:hover { color: var(--gold-light); }
-
-  .btn-waitlist.dark {
-    color: var(--grey);
-  }
-
-  .btn-waitlist.dark:hover { color: var(--navy); }
-
-  /* Hero right â€” stats */
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .stat-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
-    padding: 24px 28px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .stat-card:nth-child(1) { animation-delay: 0.2s; }
-  .stat-card:nth-child(2) { animation-delay: 0.35s; }
-  .stat-card:nth-child(3) { animation-delay: 0.5s; }
-  .stat-card:nth-child(4) { animation-delay: 0.65s; }
-
-  .stat-icon {
-    width: 44px;
-    height: 44px;
-    background: rgba(212, 168, 67, 0.12);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .stat-text strong {
+  .stat-line:last-child { border-bottom: none; }
+  .stat-line:hover { border-left-color: var(--gold); }
+  .stat-line strong {
     display: block;
     color: var(--white);
     font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
-
-  .stat-text span {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.4);
+  .stat-line span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.32);
     font-weight: 300;
+    line-height: 1.45;
   }
 
-  /* â”€â”€ PROBLEM SECTION â”€â”€ */
+  /* ── PROBLEM ── */
   .problem {
     background: var(--white);
-    padding: 100px 40px;
+    padding: 120px 48px;
   }
-
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: block;
-  }
-
   .problem h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
     font-weight: 700;
-    color: var(--navy-deep);
-    margin-bottom: 20px;
-    line-height: 1.2;
-    max-width: 700px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.15;
+    max-width: 660px;
   }
-
   .problem-intro {
-    font-size: 1.05rem;
-    color: var(--grey);
-    line-height: 1.7;
-    max-width: 600px;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.78;
+    max-width: 560px;
     margin-bottom: 60px;
+    font-weight: 300;
   }
-
   .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    overflow: hidden;
+    border: 1px solid var(--border);
   }
-
-  .problem-col {
-    padding: 48px;
-  }
-
-  .problem-col.bad { background: #FDF2F2; border-right: 1px solid #E5E7EB; }
-  .problem-col.good { background: #F0F7F4; }
-
+  .problem-col { padding: 48px 44px; }
+  .problem-col.bad { border-right: 1px solid var(--border); }
   .problem-col-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
-
-  .bad .problem-col-label { color: #DC2626; }
-  .good .problem-col-label { color: #059669; }
-
-  .problem-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
+  .bad .problem-col-label { color: #B91C1C; }
+  .good .problem-col-label { color: #065F46; }
+  .problem-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
   .problem-list li {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    line-height: 1.55;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
     color: #374151;
+    font-weight: 400;
   }
+  .problem-list li .icon { flex-shrink: 0; margin-top: 3px; }
 
-  .problem-list li .icon { flex-shrink: 0; margin-top: 2px; }
-
-  /* â”€â”€ HOW IT WORKS â”€â”€ */
-  .how {
-    background: var(--cream);
-    padding: 100px 40px;
-  }
-
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--cream); padding: 120px 48px; }
   .how h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
     font-weight: 700;
-    color: var(--navy-deep);
+    color: var(--navy);
     margin-bottom: 60px;
-    line-height: 1.2;
+    line-height: 1.15;
   }
-
   .steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: #E5E7EB;
-    border-radius: 10px;
-    overflow: hidden;
+    gap: 1px;
+    background: var(--border);
   }
-
   .step {
     background: var(--white);
-    padding: 48px 40px;
+    padding: 52px 44px;
     position: relative;
   }
-
   .step-num {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: 5.5rem;
     font-weight: 900;
-    color: var(--gold-pale);
+    color: var(--cream);
     line-height: 1;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
+    letter-spacing: -0.04em;
   }
-
   .step h3 {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: var(--navy-deep);
+    color: var(--navy);
     margin-bottom: 12px;
+    letter-spacing: 0.01em;
   }
-
   .step p {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: var(--grey);
+    font-size: 0.87rem;
+    line-height: 1.72;
+    color: var(--muted);
+    font-weight: 300;
+  }
+  .step-accent {
+    position: absolute;
+    top: 0; left: 44px;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
   }
 
-  /* â”€â”€ WHAT YOU GET â”€â”€ */
-  .what {
-    background: var(--navy-deep);
-    padding: 100px 40px;
-  }
-
+  /* ── WHAT YOU GET ── */
+  .what { background: var(--navy-mid); padding: 120px 48px; }
   .what h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 16px;
-    line-height: 1.2;
+    margin-bottom: 14px;
+    line-height: 1.15;
   }
-
   .what-intro {
     font-size: 1rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.42);
     margin-bottom: 56px;
     font-weight: 300;
-    line-height: 1.6;
-    max-width: 560px;
+    line-height: 1.75;
+    max-width: 520px;
   }
-
   .what-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
   }
-
   .what-item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 8px;
-    padding: 28px 24px;
-    transition: border-color 0.2s, background 0.2s;
+    background: var(--navy-mid);
+    padding: 36px 30px;
+    transition: background 0.2s;
   }
-
-  .what-item:hover {
-    border-color: rgba(212, 168, 67, 0.3);
-    background: rgba(212, 168, 67, 0.04);
-  }
-
-  .what-item-icon {
-    font-size: 1.4rem;
-    margin-bottom: 14px;
+  .what-item:hover { background: var(--navy-light); }
+  .what-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--gold);
+    margin-bottom: 18px;
     display: block;
   }
-
   .what-item h4 {
-    font-size: 0.9rem;
+    font-size: 0.87rem;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 8px;
     letter-spacing: 0.01em;
   }
-
   .what-item p {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.6;
+    font-size: 0.79rem;
+    color: rgba(255,255,255,0.36);
+    line-height: 1.68;
+    font-weight: 300;
   }
 
-  /* â”€â”€ REPORT PREVIEW â”€â”€ */
-  .preview {
-    background: var(--white);
-    padding: 100px 40px;
-  }
-
+  /* ── REPORT PREVIEW ── */
+  .preview { background: var(--white); padding: 120px 48px; }
   .preview h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
     font-weight: 700;
-    color: var(--navy-deep);
+    color: var(--navy);
     margin-bottom: 12px;
   }
-
   .preview-intro {
     font-size: 1rem;
-    color: var(--grey);
-    margin-bottom: 48px;
-    max-width: 500px;
-    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 52px;
+    max-width: 480px;
+    line-height: 1.75;
+    font-weight: 300;
   }
-
   .report-mock {
-    background: var(--cream);
-    border: 1px solid #E5E7EB;
-    border-radius: 10px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    max-width: 820px;
     overflow: hidden;
-    max-width: 800px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   }
-
   .report-mock-header {
-    background: var(--navy-deep);
-    padding: 20px 28px;
+    background: var(--navy);
+    padding: 20px 32px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: space-between;
   }
-
   .report-mock-header span {
     font-family: 'Playfair Display', serif;
     color: var(--white);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 700;
+    letter-spacing: 0.01em;
   }
-
   .report-mock-header .badge {
-    margin-left: auto;
     background: var(--gold);
-    color: var(--navy-deep);
-    font-size: 0.7rem;
+    color: var(--navy);
+    font-size: 0.62rem;
     font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 3px;
-    letter-spacing: 0.08em;
+    padding: 4px 11px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     font-family: 'DM Sans', sans-serif;
   }
-
-  .report-mock-body {
-    padding: 36px 36px 28px;
-  }
-
+  .report-mock-body { padding: 40px; }
   .report-section {
     margin-bottom: 28px;
     padding-bottom: 28px;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--border);
   }
-
   .report-section:last-child { border-bottom: none; margin-bottom: 0; }
-
   .report-section-title {
-    font-size: 0.7rem;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-
   .report-section-content {
-    font-size: 0.9rem;
-    line-height: 1.7;
+    font-size: 0.88rem;
+    line-height: 1.78;
     color: #374151;
   }
-
-  .report-section-content strong { color: var(--navy-deep); }
-
-  .report-blur {
-    filter: blur(5px);
-    user-select: none;
-    pointer-events: none;
-    opacity: 0.6;
-  }
-
+  .report-section-content strong { color: var(--navy); }
+  .report-blur { filter: blur(5px); user-select: none; pointer-events: none; opacity: 0.5; }
   .report-cta-overlay {
     text-align: center;
-    padding: 8px 0 20px;
-    font-size: 0.85rem;
-    color: var(--grey);
+    padding: 10px 0 24px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
+  .report-cta-overlay svg { color: var(--gold); flex-shrink: 0; }
 
-  /* â”€â”€ PRICING â”€â”€ */
-  .pricing {
-    background: var(--cream);
-    padding: 100px 40px;
-    text-align: center;
-  }
-
+  /* ── PRICING ── */
+  .pricing { background: var(--cream); padding: 120px 48px; text-align: center; }
   .pricing h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
     font-weight: 700;
-    color: var(--navy-deep);
+    color: var(--navy);
     margin-bottom: 12px;
   }
-
   .pricing-intro {
     font-size: 1rem;
-    color: var(--grey);
-    margin-bottom: 48px;
-    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 52px;
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
-
   .price-card {
     background: var(--white);
-    border: 2px solid var(--navy-deep);
-    border-radius: 12px;
-    padding: 52px 48px;
-    max-width: 480px;
-    margin: 0 auto 32px;
+    border: 1px solid var(--border);
+    padding: 56px 52px;
+    max-width: 500px;
+    margin: 0 auto 28px;
     position: relative;
-    box-shadow: 6px 6px 0px var(--navy-deep);
+    text-align: left;
   }
-
+  .price-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+  }
   .price-tag {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
+    font-size: 5.2rem;
     font-weight: 900;
-    color: var(--navy-deep);
+    color: var(--navy);
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    letter-spacing: -0.03em;
   }
-
   .price-tag sup {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     vertical-align: super;
     font-weight: 700;
+    letter-spacing: 0;
   }
-
   .price-desc {
-    font-size: 0.85rem;
-    color: var(--grey);
+    font-size: 0.8rem;
+    color: var(--muted);
     margin-bottom: 36px;
-    line-height: 1.5;
+    line-height: 1.55;
+    font-weight: 300;
+    letter-spacing: 0.03em;
   }
-
+  .price-divider {
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 30px;
+  }
   .price-includes {
     list-style: none;
-    text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 44px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
   }
-
   .price-includes li {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: #374151;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    line-height: 1.4;
   }
-
-  .price-includes li .check {
-    color: #059669;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-
-  .price-guarantee {
+  .price-includes li svg { color: var(--gold); flex-shrink: 0; }
+  .btn-primary-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 18px 36px;
     font-size: 0.8rem;
-    color: var(--grey);
-    margin-top: 20px;
-    line-height: 1.5;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary-full:hover { background: var(--gold-light); }
+  .price-guarantee {
+    font-size: 0.74rem;
+    color: var(--light);
+    margin-top: 18px;
+    line-height: 1.55;
+    text-align: center;
+    letter-spacing: 0.03em;
   }
 
-  /* â”€â”€ FAQ â”€â”€ */
-  .faq {
-    background: var(--white);
-    padding: 100px 40px;
-  }
-
+  /* ── FAQ ── */
+  .faq { background: var(--white); padding: 120px 48px; }
   .faq h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
     font-weight: 700;
-    color: var(--navy-deep);
-    margin-bottom: 48px;
+    color: var(--navy);
+    margin-bottom: 52px;
   }
-
   .faq-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    max-width: 900px;
+    gap: 40px 64px;
+    max-width: 940px;
   }
-
-  .faq-item { }
-
+  .faq-item { border-top: 1px solid var(--border); padding-top: 28px; }
   .faq-item h4 {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 700;
-    color: var(--navy-deep);
-    margin-bottom: 10px;
-    line-height: 1.4;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.45;
   }
-
   .faq-item p {
-    font-size: 0.875rem;
-    color: var(--grey);
-    line-height: 1.7;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.78;
+    font-weight: 300;
   }
 
-  /* â”€â”€ FINAL CTA â”€â”€ */
+  /* ── FINAL CTA ── */
   .final-cta {
-    background: var(--navy-deep);
-    padding: 100px 40px;
+    background: var(--navy);
+    padding: 140px 48px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
-
-  .final-cta-bg {
+  .final-cta::before {
+    content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212, 168, 67, 0.07) 0%, transparent 70%);
+    background: radial-gradient(ellipse 70% 90% at 50% 50%, rgba(200, 164, 90, 0.06) 0%, transparent 68%);
+    pointer-events: none;
   }
-
   .final-cta h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(2.4rem, 5vw, 4rem);
     font-weight: 900;
     color: var(--white);
-    margin-bottom: 20px;
-    line-height: 1.15;
+    margin-bottom: 22px;
+    line-height: 1.08;
     position: relative;
+    letter-spacing: -0.02em;
   }
-
   .final-cta h2 em { color: var(--gold); font-style: normal; }
-
   .final-cta p {
     font-size: 1rem;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 44px;
-    line-height: 1.6;
+    color: rgba(255,255,255,0.42);
+    margin-bottom: 48px;
+    line-height: 1.75;
     position: relative;
+    font-weight: 300;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .final-cta .btn-primary {
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 52px;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
   }
 
-  .final-cta .btn-primary { margin: 0 auto; position: relative; font-size: 1.05rem; padding: 20px 44px; }
-
-  /* â”€â”€ FOOTER â”€â”€ */
+  /* ── FOOTER ── */
   footer {
-    background: var(--navy-deep);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 32px 40px;
+    background: var(--navy);
+    border-top: 1px solid rgba(200, 164, 90, 0.15);
+    padding: 32px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
   footer .logo {
     font-family: 'Playfair Display', serif;
-    color: rgba(255,255,255,0.4);
-    font-size: 1rem;
+    color: rgba(255,255,255,0.32);
+    font-size: 0.95rem;
+    font-weight: 700;
   }
-
   footer .logo span { color: var(--gold); }
+  footer p { font-size: 0.74rem; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; }
+  footer a { color: rgba(255,255,255,0.28); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
 
-  footer p {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.25);
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-  /* â”€â”€ ANIMATIONS â”€â”€ */
+  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+  .hero-left { animation: fadeUp 0.8s ease both; }
+  .hero-stats .stat-line:nth-child(1) { animation: fadeUp 0.6s ease 0.18s both; }
+  .hero-stats .stat-line:nth-child(2) { animation: fadeUp 0.6s ease 0.30s both; }
+  .hero-stats .stat-line:nth-child(3) { animation: fadeUp 0.6s ease 0.42s both; }
+  .hero-stats .stat-line:nth-child(4) { animation: fadeUp 0.6s ease 0.54s both; }
 
-  .hero-left { animation: fadeUp 0.7s ease both; }
-
-  /* â”€â”€ RESPONSIVE â”€â”€ */
-  @media (max-width: 768px) {
-    nav { padding: 16px 20px; }
-    .hero { padding: 100px 20px 60px; }
-    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-    .hero-right { display: none; }
-    .problem, .how, .what, .preview, .pricing, .faq, .final-cta { padding: 72px 20px; }
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    .hero { padding: 110px 24px 80px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 0; }
+    .hero-stats { display: none; }
+    .problem, .how, .what, .preview, .pricing, .faq, .final-cta { padding: 80px 24px; }
     .problem-grid { grid-template-columns: 1fr; }
-    .problem-col.bad { border-right: none; border-bottom: 1px solid #E5E7EB; }
+    .problem-col.bad { border-right: none; border-bottom: 1px solid var(--border); }
     .steps { grid-template-columns: 1fr; }
     .what-grid { grid-template-columns: 1fr 1fr; }
     .faq-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
-    .price-card { padding: 36px 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+    .price-card { padding: 40px 28px; }
   }
-
-  @media (max-width: 480px) {
+  @media (max-width: 540px) {
     .what-grid { grid-template-columns: 1fr; }
+    .nav-cta { font-size: 0.72rem; padding: 9px 16px; letter-spacing: 0.06em; }
   }
 </style>
 </head>
@@ -784,55 +712,40 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Cyprus<span>Ready</span></div>
-  <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="nav-cta">Get Your Report â€” â‚¬19</a>
+  <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="nav-cta">Get Your Report &mdash; &euro;19</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-label">For Digital Nomads Â· Cyprus 3â€“12 Month Stays</div>
+      <div class="hero-eyebrow">Digital Nomad Intelligence &middot; Cyprus 2026</div>
       <h1>Know exactly where to live in Cyprus <em>before you book anything.</em></h1>
-      <p class="hero-sub">Stop wasting hours on outdated Reddit threads and generic travel blogs. Get a personalised relocation report built around your budget, work setup, and lifestyle â€” delivered in minutes.</p>
+      <p class="hero-sub">Stop wasting hours on outdated Reddit threads and generic travel blogs. Get a personalised relocation report built around your budget, work setup, and lifestyle &mdash; delivered in minutes.</p>
       <div class="hero-actions">
         <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="btn-primary">
           Start My Relocation Report
-          <span class="arrow">â†’</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <p class="hero-price-note">One-time payment Â· â‚¬19 Â· No subscription Â· Report delivered instantly</p>
-
+        <p class="hero-price-note">One-time payment &middot; &euro;19 &middot; No subscription &middot; Report delivered instantly</p>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="stat-card">
-        <div class="stat-icon">ðŸ™ï¸</div>
-        <div class="stat-text">
-          <strong>5 cities. 27 neighbourhoods.</strong>
-          <span>Every major area analysed and compared</span>
-        </div>
+    <div class="hero-stats">
+      <div class="stat-line">
+        <strong>5 cities &middot; 27 neighbourhoods</strong>
+        <span>Every major area analysed and compared</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">âš¡</div>
-        <div class="stat-text">
-          <strong>Personalised to your answers</strong>
-          <span>Not a generic guide â€” built around your situation</span>
-        </div>
+      <div class="stat-line">
+        <strong>Personalised to your answers</strong>
+        <span>Not a generic guide &mdash; built around your situation</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">ðŸ’¶</div>
-        <div class="stat-text">
-          <strong>Real cost breakdowns</strong>
-          <span>Rent, food, transport â€” no guessing</span>
-        </div>
+      <div class="stat-line">
+        <strong>Real cost breakdowns</strong>
+        <span>Rent, food, transport &mdash; no guessing</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">ðŸ“‹</div>
-        <div class="stat-text">
-          <strong>Visa & tax overview included</strong>
-          <span>EU and non-EU pathways covered</span>
-        </div>
+      <div class="stat-line">
+        <strong>Visa &amp; tax overview included</strong>
+        <span>EU and non-EU pathways covered</span>
       </div>
     </div>
   </div>
@@ -841,34 +754,72 @@
 <!-- PROBLEM -->
 <section class="problem">
   <div class="section-inner">
-    <span class="section-label">The Problem</span>
-    <h2>Relocating to Cyprus shouldn't feel like detective work.</h2>
-    <p class="problem-intro">Most people spend weeks trying to piece together reliable information from sources that are outdated, generic, or written for tourists â€” not people planning to actually live there.</p>
-    <div class="problem-grid">
+    <span class="section-label reveal">The Problem</span>
+    <h2 class="reveal">Relocating to Cyprus shouldn&rsquo;t feel like detective work.</h2>
+    <p class="problem-intro reveal">Most people spend weeks trying to piece together reliable information from sources that are outdated, generic, or written for tourists &mdash; not people planning to actually live there.</p>
+    <div class="problem-grid reveal">
       <div class="problem-col bad">
         <div class="problem-col-label">
-          <span>âœ•</span> What you're doing now
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          What you&rsquo;re doing now
         </div>
         <ul class="problem-list">
-          <li><span class="icon">âœ•</span> Googling the same questions and getting contradictory answers</li>
-          <li><span class="icon">âœ•</span> Reading Reddit threads from 3 years ago</li>
-          <li><span class="icon">âœ•</span> Watching YouTube vlogs that show the highlights, not the reality</li>
-          <li><span class="icon">âœ•</span> Asking in Facebook groups and getting 12 different opinions</li>
-          <li><span class="icon">âœ•</span> Still not sure which city â€” or even which neighbourhood</li>
-          <li><span class="icon">âœ•</span> Worried you'll make an expensive mistake</li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Googling the same questions and getting contradictory answers
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Reading Reddit threads from 3 years ago
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Watching YouTube vlogs that show the highlights, not the reality
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Asking in Facebook groups and getting 12 different opinions
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Still not sure which city &mdash; or even which neighbourhood
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+            Worried you&rsquo;ll make an expensive mistake
+          </li>
         </ul>
       </div>
       <div class="problem-col good">
         <div class="problem-col-label">
-          <span>âœ“</span> What CyprusReady gives you
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          What CyprusReady gives you
         </div>
         <ul class="problem-list">
-          <li><span class="icon">âœ“</span> One clear city and neighbourhood recommendation, explained</li>
-          <li><span class="icon">âœ“</span> Accurate, current cost of living breakdown for your budget</li>
-          <li><span class="icon">âœ“</span> Visa and residency overview matched to your citizenship</li>
-          <li><span class="icon">âœ“</span> Internet quality and coworking options in your area</li>
-          <li><span class="icon">âœ“</span> Honest risks and what to watch out for</li>
-          <li><span class="icon">âœ“</span> 5 concrete next steps â€” so you know exactly what to do</li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            One clear city and neighbourhood recommendation, explained
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Accurate, current cost of living breakdown for your budget
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Visa and residency overview matched to your citizenship
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Internet quality and coworking options in your area
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Honest risks and what to watch out for
+          </li>
+          <li>
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            5 concrete next steps &mdash; so you know exactly what to do
+          </li>
         </ul>
       </div>
     </div>
@@ -878,20 +829,23 @@
 <!-- HOW IT WORKS -->
 <section class="how">
   <div class="section-inner">
-    <span class="section-label">How It Works</span>
-    <h2>Three steps. Done in under 15 minutes.</h2>
+    <span class="section-label reveal">How It Works</span>
+    <h2 class="reveal">Three steps. Done in under 15 minutes.</h2>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
+        <div class="step-accent"></div>
         <div class="step-num">01</div>
-        <h3>Pay once. â‚¬19.</h3>
-        <p>One flat fee. No subscription. No upsell hidden behind a paywall. You pay, you get your report. That's the entire transaction.</p>
+        <h3>Pay once. &euro;19.</h3>
+        <p>One flat fee. No subscription. No upsell hidden behind a paywall. You pay, you get your report. That&rsquo;s the entire transaction.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
+        <div class="step-accent"></div>
         <div class="step-num">02</div>
         <h3>Fill in a short survey.</h3>
-        <p>25 targeted questions about your budget, work setup, lifestyle, citizenship, and priorities. Takes 5â€“10 minutes. The more specific you are, the sharper your report.</p>
+        <p>25 targeted questions about your budget, work setup, lifestyle, citizenship, and priorities. Takes 5&ndash;10 minutes. The more specific you are, the sharper your report.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
+        <div class="step-accent"></div>
         <div class="step-num">03</div>
         <h3>Get your personalised report.</h3>
         <p>Your report is generated and delivered to your inbox as a structured, formatted document. Read it. Use it. Make your decision with confidence.</p>
@@ -903,52 +857,52 @@
 <!-- WHAT YOU GET -->
 <section class="what">
   <div class="section-inner">
-    <span class="section-label" style="color: var(--gold);">What's In Your Report</span>
-    <h2>Every section that matters. Nothing that doesn't.</h2>
-    <p class="what-intro">Your report covers nine structured sections, each written specifically for your answers. No filler. No generic advice.</p>
+    <span class="section-label reveal" style="color: var(--gold);">What&rsquo;s In Your Report</span>
+    <h2 class="reveal">Every section that matters. Nothing that doesn&rsquo;t.</h2>
+    <p class="what-intro reveal">Your report covers nine structured sections, each written specifically for your answers. No filler. No generic advice.</p>
     <div class="what-grid">
-      <div class="what-item">
-        <span class="what-item-icon">ðŸ™ï¸</span>
-        <h4>Recommended City & Neighbourhood</h4>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <h4>Recommended City &amp; Neighbourhood</h4>
         <p>One clear recommendation with the reasoning behind it, plus a backup option.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">ðŸ’¶</span>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5-1.5 2-3 2-3 1-3 2.5 1.3 2.5 3 2.5 3-1 3-2.5"/></svg>
         <h4>Monthly Budget Breakdown</h4>
-        <p>Rent, food, transport, leisure â€” broken down for your specific area and lifestyle.</p>
+        <p>Rent, food, transport, leisure &mdash; broken down for your specific area and lifestyle.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">ðŸ“¡</span>
-        <h4>Internet & Coworking</h4>
-        <p>Reliability ratings, named coworking spaces, and cafÃ© working culture in your area.</p>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        <h4>Internet &amp; Coworking</h4>
+        <p>Reliability ratings, named coworking spaces, and caf&eacute; working culture in your area.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">ðŸ </span>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         <h4>Housing Advice</h4>
         <p>What to expect for your preferred rental type, lease terms, and where to find listings.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">ðŸ›‚</span>
-        <h4>Visa & Residency Overview</h4>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 18h8"/></svg>
+        <h4>Visa &amp; Residency Overview</h4>
         <p>Relevant pathways based on your citizenship and length of stay. Clear, plain English.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">ðŸ“Š</span>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
         <h4>Tax Considerations</h4>
         <p>High-level overview of Cyprus tax advantages relevant to your situation, including Non-Dom.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">ðŸŒ…</span>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <h4>Lifestyle Fit</h4>
-        <p>Social scene, nightlife, food, beach access, green space â€” matched to your preferences.</p>
+        <p>Social scene, nightlife, food, beach access, green space &mdash; matched to your preferences.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">âš ï¸</span>
-        <h4>Risks & Things to Watch Out For</h4>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <h4>Risks &amp; Things to Watch Out For</h4>
         <p>Honest, specific risks for your profile and chosen area. No sugarcoating.</p>
       </div>
-      <div class="what-item">
-        <span class="what-item-icon">âœ…</span>
+      <div class="what-item reveal">
+        <svg class="what-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         <h4>Your Next 5 Steps</h4>
         <p>Concrete, prioritised actions to take right now. Leave knowing exactly what to do.</p>
       </div>
@@ -959,32 +913,32 @@
 <!-- REPORT PREVIEW -->
 <section class="preview">
   <div class="section-inner">
-    <span class="section-label">Sample Report</span>
-    <h2>This is what you'll receive.</h2>
-    <p class="preview-intro">A structured, readable document â€” not a wall of AI text. Every section directly tied to your answers.</p>
-    <div class="report-mock">
+    <span class="section-label reveal">Sample Report</span>
+    <h2 class="reveal">This is what you&rsquo;ll receive.</h2>
+    <p class="preview-intro reveal">A structured, readable document &mdash; not a wall of AI text. Every section directly tied to your answers.</p>
+    <div class="report-mock reveal">
       <div class="report-mock-header">
-        <span>CyprusReady â€” Personalised Relocation Report</span>
+        <span>CyprusReady &mdash; Personalised Relocation Report</span>
         <div class="badge">Sample</div>
       </div>
       <div class="report-mock-body">
         <div class="report-section">
-          <div class="report-section-title">Recommended City & Neighbourhood</div>
+          <div class="report-section-title">Recommended City &amp; Neighbourhood</div>
           <div class="report-section-content">
-            Based on your answers, <strong>Neapolis, Limassol</strong> is your strongest match. You prioritised walkability, fast internet, and access to a coworking community â€” Neapolis delivers all three. It sits within a 10-minute walk of Limassol's main coworking hubs, has consistently high fibre coverage, and hosts the largest concentration of remote workers and expats on the island. Your backup option is <strong>Engomi, Nicosia</strong> â€” quieter, slightly cheaper, and with excellent internet infrastructure, though you'd sacrifice beach access entirely.
+            Based on your answers, <strong>Neapolis, Limassol</strong> is your strongest match. You prioritised walkability, fast internet, and access to a coworking community &mdash; Neapolis delivers all three. It sits within a 10-minute walk of Limassol&rsquo;s main coworking hubs, has consistently high fibre coverage, and hosts the largest concentration of remote workers and expats on the island. Your backup option is <strong>Engomi, Nicosia</strong> &mdash; quieter, slightly cheaper, and with excellent internet infrastructure, though you&rsquo;d sacrifice beach access entirely.
           </div>
         </div>
         <div class="report-section">
           <div class="report-section-title">Estimated Monthly Budget Breakdown</div>
           <div class="report-section-content">
-            <strong>Rent (Neapolis, furnished 1BR):</strong> â‚¬1,000â€“â‚¬1,300 &nbsp;Â·&nbsp; <strong>Food & groceries:</strong> â‚¬300â€“â‚¬400 &nbsp;Â·&nbsp; <strong>Transport (no car):</strong> â‚¬80â€“â‚¬120 &nbsp;Â·&nbsp; <strong>Leisure & dining out:</strong> â‚¬250â€“â‚¬400<br><br>
-            <strong>Estimated total: â‚¬1,650â€“â‚¬2,200/month.</strong> Summer months (Julyâ€“August) see short-term rental prices spike 20â€“35% â€” locking in a lease before June is strongly advised.
+            <strong>Rent (Neapolis, furnished 1BR):</strong> &euro;1,000&ndash;&euro;1,300 &nbsp;&middot;&nbsp; <strong>Food &amp; groceries:</strong> &euro;300&ndash;&euro;400 &nbsp;&middot;&nbsp; <strong>Transport (no car):</strong> &euro;80&ndash;&euro;120 &nbsp;&middot;&nbsp; <strong>Leisure &amp; dining out:</strong> &euro;250&ndash;&euro;400<br><br>
+            <strong>Estimated total: &euro;1,650&ndash;&euro;2,200/month.</strong> Summer months (July&ndash;August) see short-term rental prices spike 20&ndash;35% &mdash; locking in a lease before June is strongly advised.
           </div>
         </div>
         <div class="report-section report-blur">
-          <div class="report-section-title">Visa & Residency Overview</div>
+          <div class="report-section-title">Visa &amp; Residency Overview</div>
           <div class="report-section-content">
-            As an EU citizen planning a 6â€“9 month stay, you have the right to reside in Cyprus without a visa for the full duration. You are not required to register formally for stays under 3 months, but for stays exceeding 3 months you should obtain a Registration Certificate (MEU1 form) from the Civil Registry and Migration Department...
+            As an EU citizen planning a 6&ndash;9 month stay, you have the right to reside in Cyprus without a visa for the full duration. You are not required to register formally for stays under 3 months, but for stays exceeding 3 months you should obtain a Registration Certificate (MEU1 form) from the Civil Registry and Migration Department...
           </div>
         </div>
         <div class="report-section report-blur">
@@ -994,7 +948,10 @@
           </div>
         </div>
       </div>
-      <div class="report-cta-overlay">ðŸ”’ Full report unlocked after purchase â€” including Visa, Tax, Housing, Risks & Next Steps</div>
+      <div class="report-cta-overlay">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Full report unlocked after purchase &mdash; including Visa, Tax, Housing, Risks &amp; Next Steps
+      </div>
     </div>
   </div>
 </section>
@@ -1002,61 +959,62 @@
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="section-inner" style="display:flex; flex-direction:column; align-items:center;">
-    <span class="section-label">Pricing</span>
-    <h2>Simple. One price. No surprises.</h2>
-    <p class="pricing-intro">â‚¬19 is less than one hour of bad decisions costs you. If you're moving to Cyprus for 3â€“12 months, the cost of choosing the wrong city or neighbourhood is measured in weeks of disruption and thousands in wasted rent.</p>
-    <div class="price-card">
-      <div class="price-tag"><sup>â‚¬</sup>19</div>
-      <p class="price-desc">One-time payment Â· Instant report delivery Â· No subscription</p>
+    <span class="section-label reveal">Pricing</span>
+    <h2 class="reveal">Simple. One price. No surprises.</h2>
+    <p class="pricing-intro reveal">&euro;19 is less than one hour of bad decisions costs you. If you&rsquo;re moving to Cyprus for 3&ndash;12 months, the cost of choosing the wrong city or neighbourhood is measured in weeks of disruption and thousands in wasted rent.</p>
+    <div class="price-card reveal">
+      <div class="price-tag"><sup>&euro;</sup>19</div>
+      <p class="price-desc">One-time payment &middot; Instant report delivery &middot; No subscription</p>
+      <div class="price-divider"></div>
       <ul class="price-includes">
-        <li><span class="check">âœ“</span> Full personalised relocation report</li>
-        <li><span class="check">âœ“</span> City & neighbourhood recommendation</li>
-        <li><span class="check">âœ“</span> Detailed monthly cost breakdown</li>
-        <li><span class="check">âœ“</span> Visa & residency overview</li>
-        <li><span class="check">âœ“</span> Tax considerations overview</li>
-        <li><span class="check">âœ“</span> Internet & coworking guide</li>
-        <li><span class="check">âœ“</span> Housing advice & platforms</li>
-        <li><span class="check">âœ“</span> Honest risks & next steps</li>
-        <li><span class="check">âœ“</span> Delivered as a formatted Google Doc</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full personalised relocation report</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> City &amp; neighbourhood recommendation</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Detailed monthly cost breakdown</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Visa &amp; residency overview</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tax considerations overview</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Internet &amp; coworking guide</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Housing advice &amp; platforms</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Honest risks &amp; next steps</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Delivered as a formatted Google Doc</li>
       </ul>
-      <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="btn-primary" style="width:100%; font-size:1rem;">
-        Start My Relocation Report â†’
+      <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="btn-primary-full">
+        Start My Relocation Report
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <p class="price-guarantee">ðŸ”’ Secure payment via Stripe &nbsp;Â·&nbsp; Report delivered to your inbox within minutes</p>
+      <p class="price-guarantee">Secure payment via Stripe &middot; Report delivered to your inbox within minutes</p>
     </div>
-
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq">
   <div class="section-inner">
-    <span class="section-label">Questions</span>
-    <h2>Straight answers.</h2>
+    <span class="section-label reveal">Questions</span>
+    <h2 class="reveal">Straight answers.</h2>
     <div class="faq-grid">
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <h4>Is this just ChatGPT with a Cyprus prompt?</h4>
-        <p>No. The report is generated using a structured Cyprus-specific database covering 27 neighbourhoods across 5 cities, combined with your exact survey answers. Generic AI gives generic output. CyprusReady is calibrated specifically for 3â€“12 month digital nomad stays in Cyprus.</p>
+        <p>No. The report is generated using a structured Cyprus-specific database covering 27 neighbourhoods across 5 cities, combined with your exact survey answers. Generic AI gives generic output. CyprusReady is calibrated specifically for 3&ndash;12 month digital nomad stays in Cyprus.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <h4>How fast will I receive my report?</h4>
-        <p>Within minutes of submitting your survey. You'll receive an email with a link to your formatted report document. There's no manual review process â€” it's generated and delivered automatically.</p>
+        <p>Within minutes of submitting your survey. You&rsquo;ll receive an email with a link to your formatted report document. There&rsquo;s no manual review process &mdash; it&rsquo;s generated and delivered automatically.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <h4>Is the visa and tax information accurate?</h4>
-        <p>It is accurate as a high-level overview and starting point. It is not legal or financial advice. For formal visa applications or tax planning, consult a qualified professional in Cyprus. We're clear about this in every report.</p>
+        <p>It is accurate as a high-level overview and starting point. It is not legal or financial advice. For formal visa applications or tax planning, consult a qualified professional in Cyprus. We&rsquo;re clear about this in every report.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <h4>What if I already know which city I want?</h4>
-        <p>The report still delivers value â€” it will confirm your choice with data, or highlight trade-offs you may not have considered. The neighbourhood-level breakdown and budget analysis alone are worth the â‚¬19.</p>
+        <p>The report still delivers value &mdash; it will confirm your choice with data, or highlight trade-offs you may not have considered. The neighbourhood-level breakdown and budget analysis alone are worth the &euro;19.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <h4>Do you cover all cities in Cyprus?</h4>
-        <p>We cover Limassol, Paphos, Larnaca, and Nicosia â€” the four cities most relevant to digital nomads. We go deep on each rather than spreading thin across the whole island.</p>
+        <p>We cover Limassol, Paphos, Larnaca, Nicosia, and Protaras/Ayia Napa &mdash; the five cities most relevant to digital nomads. We go deep on each rather than spreading thin across the whole island.</p>
       </div>
-      <div class="faq-item">
-        <h4>What if I'm not satisfied?</h4>
-        <p>If your report is delivered and genuinely fails to address your survey answers, contact us and we'll make it right. We stand behind the quality of what we produce.</p>
+      <div class="faq-item reveal">
+        <h4>What if I&rsquo;m not satisfied?</h4>
+        <p>If your report is delivered and genuinely fails to address your survey answers, contact us and we&rsquo;ll make it right. We stand behind the quality of what we produce.</p>
       </div>
     </div>
   </div>
@@ -1064,18 +1022,45 @@
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <div class="final-cta-bg"></div>
-  <h2>Stop guessing.<br><em>Start knowing.</em></h2>
-  <p>One decision made with confidence pays for itself many times over.<br>Your personalised Cyprus relocation report. â‚¬19. Done in minutes.</p>
-  <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="btn-primary">Start My Relocation Report â†’</a>
+  <h2 class="reveal">Stop guessing.<br><em>Start knowing.</em></h2>
+  <p class="reveal">One decision made with confidence pays for itself many times over.<br>Your personalised Cyprus relocation report. &euro;19. Done in minutes.</p>
+  <a href="https://buy.stripe.com/cNiaEX9KR2SV5On9eabZe00" class="btn-primary">
+    Start My Relocation Report
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="logo">Cyprus<span>Ready</span></div>
-  <p>Not legal or financial advice Â· Â© 2026 CyprusReady Â· All rights reserved Â· <a href="https://cyprusready.it.com/privacy.html" style="color:rgba(255,255,255,0.4); text-decoration:none;">Privacy Policy</a></p>
+  <p>Not legal or financial advice &middot; &copy; 2026 CyprusReady &middot; All rights reserved &middot; <a href="https://cyprusready.it.com/privacy.html">Privacy Policy</a></p>
 </footer>
 
+<script>
+(function() {
+  // Auto-stagger children inside grids
+  document.querySelectorAll('.what-grid, .steps, .faq-grid').forEach(function(grid) {
+    grid.querySelectorAll('.reveal').forEach(function(el, i) {
+      el.dataset.delay = (i % 3) * 100;
+    });
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var delay = parseInt(entry.target.dataset.delay) || 0;
+        setTimeout(function() {
+          entry.target.classList.add('is-visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
-
