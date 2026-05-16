@@ -2,202 +2,248 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — CyprusReady</title>
+<title>Privacy Policy &mdash; CyprusReady</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  html { border-top: 2px solid #C8A45A; }
+
   :root {
-    --navy-deep: #111D35;
-    --navy: #1B2A4A;
-    --gold: #D4A843;
-    --cream: #FAF7F0;
-    --white: #FFFFFF;
-    --grey: #6B7280;
+    --navy:      #0D1C33;
+    --navy-mid:  #152840;
+    --gold:      #C8A45A;
+    --cream:     #F5F1E9;
+    --white:     #FFFFFF;
+    --off-white: #FCFAF6;
+    --text:      #16213E;
+    --muted:     #647082;
+    --border:    #E4DDD2;
   }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: #1a1a2e;
-    line-height: 1.7;
+    background: var(--off-white);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
   }
+
   nav {
-    background: var(--navy-deep);
-    padding: 20px 40px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(212,168,67,0.15);
+    background: rgba(13,28,51,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,164,90,0.15);
   }
-  .logo {
+  .nav-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--white);
     text-decoration: none;
   }
-  .logo span { color: var(--gold); }
+  .nav-logo span { color: var(--gold); }
   .nav-back {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
     text-decoration: none;
     transition: color 0.2s;
   }
   .nav-back:hover { color: var(--gold); }
-  .container {
-    max-width: 760px;
+
+  main {
+    max-width: 740px;
     margin: 0 auto;
-    padding: 72px 24px 80px;
+    padding: 130px 48px 100px;
   }
+
   .page-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 12px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
   }
+  .page-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 700;
-    color: var(--navy-deep);
-    margin-bottom: 8px;
-    line-height: 1.2;
-  }
-  .last-updated {
-    font-size: 0.82rem;
-    color: var(--grey);
-    margin-bottom: 48px;
-  }
-  .divider {
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin-bottom: 48px;
-  }
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--navy-deep);
-    margin-top: 40px;
+    color: var(--navy);
+    line-height: 1.12;
     margin-bottom: 14px;
   }
-  p {
-    font-size: 0.95rem;
-    color: #374151;
-    margin-bottom: 16px;
+
+  .last-updated {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 56px;
+    font-weight: 300;
   }
+
+  .policy-section {
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+  }
+  .policy-section:last-child { border-bottom: 1px solid var(--border); }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.92rem;
+    line-height: 1.82;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  p:last-child { margin-bottom: 0; }
+
   ul {
-    margin: 0 0 16px 20px;
+    list-style: none;
+    margin: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   ul li {
-    font-size: 0.95rem;
-    color: #374151;
-    margin-bottom: 8px;
-  }
-  a { color: var(--navy-deep); }
-  a:hover { color: var(--gold); }
-  .highlight-box {
-    background: #F0F7FF;
-    border-left: 3px solid var(--gold);
-    padding: 18px 24px;
-    border-radius: 0 6px 6px 0;
-    margin: 24px 0;
     font-size: 0.9rem;
-    color: #374151;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.65;
+    padding-left: 18px;
+    position: relative;
   }
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--gold); }
+
   footer {
-    background: var(--navy-deep);
-    padding: 28px 40px;
-    text-align: center;
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.25);
+    background: var(--navy);
+    border-top: 1px solid rgba(200,164,90,0.15);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .logo { font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.32); font-size: 0.95rem; font-weight: 700; }
+  footer .logo span { color: var(--gold); }
+  footer p { font-size: 0.74rem; color: rgba(255,255,255,0.2); }
+  footer a { color: rgba(255,255,255,0.28); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 700px) {
+    nav { padding: 18px 24px; }
+    main { padding: 100px 24px 80px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="logo">Cyprus<span>Ready</span></a>
-  <a href="/" class="nav-back">← Back to home</a>
+  <a href="/" class="nav-logo">Cyprus<span>Ready</span></a>
+  <a href="/" class="nav-back">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to site
+  </a>
 </nav>
 
-<div class="container">
-  <span class="page-label">Legal</span>
+<main>
+  <div class="page-label">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="last-updated">Last updated: January 2025</p>
-  <div class="divider"></div>
+  <p class="last-updated">Last updated: May 2026</p>
 
-  <div class="highlight-box">
-    Plain English summary: We collect your email and survey answers to generate your report. We don't sell your data. We don't spam you. You can ask us to delete your data at any time.
+  <div class="policy-section">
+    <h2>Who we are</h2>
+    <p>CyprusReady operates at <a href="https://cyprusready.it.com">cyprusready.it.com</a>. We provide personalised relocation reports for digital nomads planning to move to Cyprus. You can contact us at <a href="mailto:cyprusready@gmail.com">cyprusready@gmail.com</a>.</p>
   </div>
 
-  <h2>1. Who We Are</h2>
-  <p>CyprusReady is a digital product that provides personalised relocation reports for digital nomads planning stays in Cyprus. When we say "we", "us", or "CyprusReady" in this policy, we're referring to the CyprusReady service.</p>
-  <p>For questions about this policy, contact us at: cyprusready@gmail.com</p>
+  <div class="policy-section">
+    <h2>What data we collect and why</h2>
+    <p>We collect only what is necessary to deliver your report:</p>
+    <ul>
+      <li><strong>Survey responses</strong> &mdash; your answers to the 25-question relocation survey (budget, work setup, lifestyle preferences, citizenship). Used solely to generate your personalised report.</li>
+      <li><strong>Email address</strong> &mdash; collected via the survey form to deliver your completed report. We do not send marketing emails.</li>
+      <li><strong>Payment information</strong> &mdash; processed entirely by Stripe. We never see or store your card details.</li>
+    </ul>
+  </div>
 
-  <h2>2. What Information We Collect</h2>
-  <p>When you use CyprusReady, we collect the following information:</p>
-  <ul>
-    <li><strong>Email address</strong> — provided during payment and survey. Used to deliver your report.</li>
-    <li><strong>Survey responses</strong> — your answers to the 25-question relocation survey. Used solely to generate your personalised report.</li>
-    <li><strong>Payment information</strong> — processed by Stripe. We do not store your card details. Stripe's privacy policy applies to payment processing.</li>
-    <li><strong>Waitlist email</strong> — if you join our waitlist, we store your email address to notify you at launch.</li>
-  </ul>
+  <div class="policy-section">
+    <h2>Third-party services</h2>
+    <p>We use the following services to operate CyprusReady:</p>
+    <ul>
+      <li><strong>Stripe</strong> &mdash; payment processing. Stripe&rsquo;s privacy policy applies to all payment data: <a href="https://stripe.com/privacy" target="_blank" rel="noopener">stripe.com/privacy</a></li>
+      <li><strong>Google Forms &amp; Google Sheets</strong> &mdash; survey collection and data storage. Google&rsquo;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li><strong>OpenAI</strong> &mdash; your survey responses are processed by OpenAI&rsquo;s API to generate your report. Data is not used for model training. OpenAI&rsquo;s privacy policy: <a href="https://openai.com/privacy" target="_blank" rel="noopener">openai.com/privacy</a></li>
+      <li><strong>Google Docs &amp; Gmail</strong> &mdash; your report is created as a Google Doc and delivered to your email address via Gmail.</li>
+    </ul>
+  </div>
 
-  <h2>3. How We Use Your Information</h2>
-  <p>We use your information for the following purposes only:</p>
-  <ul>
-    <li>To generate and deliver your personalised relocation report</li>
-    <li>To email you your report and any follow-up correspondence related to your purchase</li>
-    <li>To notify waitlist members when CyprusReady launches</li>
-    <li>To improve the quality of our reports over time</li>
-  </ul>
-  <p>We do not use your information for advertising, profiling, or any purpose unrelated to delivering your report.</p>
+  <div class="policy-section">
+    <h2>How long we retain your data</h2>
+    <p>Your survey responses and email address are retained in Google Sheets for up to 12 months, after which they are deleted. Your delivered report document remains accessible via its Google Docs link indefinitely unless you request deletion.</p>
+  </div>
 
-  <h2>4. How We Store Your Information</h2>
-  <p>Your survey responses and email address are stored in Google Sheets and Google Drive, both of which are subject to Google's security and privacy standards. Your report is stored as a Google Doc and shared with you via a private link.</p>
-  <p>We take reasonable steps to protect your information but no internet transmission is 100% secure.</p>
+  <div class="policy-section">
+    <h2>Your rights</h2>
+    <p>Under GDPR you have the right to access, correct, or delete the personal data we hold about you. To exercise any of these rights, email us at <a href="mailto:cyprusready@gmail.com">cyprusready@gmail.com</a> and we will respond within 30 days.</p>
+  </div>
 
-  <h2>5. Third Parties</h2>
-  <p>We use the following third-party services to operate CyprusReady:</p>
-  <ul>
-    <li><strong>Stripe</strong> — payment processing. Stripe's privacy policy: stripe.com/privacy</li>
-    <li><strong>OpenAI</strong> — report generation. Your survey answers are sent to OpenAI's API to generate your report. OpenAI's privacy policy: openai.com/privacy</li>
-    <li><strong>Google</strong> — Forms, Sheets, Docs, and Gmail. Google's privacy policy: policies.google.com/privacy</li>
-  </ul>
-  <p>We do not sell, rent, or share your personal data with any other third parties.</p>
+  <div class="policy-section">
+    <h2>Cookies</h2>
+    <p>CyprusReady does not use tracking cookies or analytics on this website. Stripe may set cookies during the payment process; these are governed by Stripe&rsquo;s own policy.</p>
+  </div>
 
-  <h2>6. Your Rights</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li>Request a copy of the data we hold about you</li>
-    <li>Request that we delete your data</li>
-    <li>Unsubscribe from any emails at any time</li>
-    <li>Ask questions about how your data is used</li>
-  </ul>
-  <p>To exercise any of these rights, email us at cyprusready@gmail.com and we will respond within 14 days.</p>
+  <div class="policy-section">
+    <h2>Changes to this policy</h2>
+    <p>If we make material changes to this policy we will update the date at the top of this page. Continued use of the service after changes constitutes acceptance.</p>
+  </div>
+</main>
 
-  <h2>7. Cookies</h2>
-  <p>Our website does not use cookies or tracking scripts. We do not use analytics tools or advertising pixels on cyprusready.com.</p>
-
-  <h2>8. Children</h2>
-  <p>CyprusReady is not intended for use by anyone under the age of 18. We do not knowingly collect data from minors.</p>
-
-  <h2>9. Changes to This Policy</h2>
-  <p>If we make material changes to this policy, we will update the "last updated" date at the top of this page. Continued use of CyprusReady after changes constitutes acceptance of the updated policy.</p>
-
-  <h2>10. Contact</h2>
-  <p>For any privacy-related questions or requests, contact us at <a href=mailto:cyprusready@gmail.com>cyprusready@gmail.com</a>. We will respond within 14 days.</p>
-
-</div>
-
-<footer>CyprusReady · Not legal or financial advice · © 2025 CyprusReady · All rights reserved</footer>
+<footer>
+  <div class="logo">Cyprus<span>Ready</span></div>
+  <p>&copy; 2026 CyprusReady &middot; <a href="/privacy.html">Privacy Policy</a></p>
+</footer>
 
 </body>
 </html>
