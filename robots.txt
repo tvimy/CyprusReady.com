@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /confirmation.html
+
+Sitemap: https://cyprusready.it.com/sitemap.xml
