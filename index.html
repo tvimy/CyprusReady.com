@@ -371,6 +371,46 @@
     text-transform: uppercase;
   }
 
+  /* ── CITIES STRIP ── */
+  .cities { background: var(--navy); }
+  .cities-inner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .city-thumb {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    filter: grayscale(55%);
+    transition: filter 0.45s ease;
+  }
+  .city-thumb:hover { filter: grayscale(0%); }
+  .city-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,28,51,0.88) 0%, rgba(13,28,51,0.35) 55%, rgba(13,28,51,0.12) 100%);
+    transition: background 0.45s ease;
+  }
+  .city-thumb:hover .city-overlay {
+    background: linear-gradient(to top, rgba(13,28,51,0.72) 0%, rgba(13,28,51,0.12) 55%, transparent 100%);
+  }
+  .city-name {
+    position: absolute;
+    bottom: 18px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.1em;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+  .city-thumb:hover .city-name { color: var(--gold); }
+
   /* ── CHANGE 1: WHAT YOU GET — editorial numbered list ── */
   .what { background: var(--navy-mid); padding: 120px 48px; }
   .what h2 {
@@ -656,6 +696,7 @@
     .what-row { grid-template-columns: 52px 1fr; gap: 0 24px; }
     .what-row:nth-child(n) .what-row-content + .what-row-content { display: none; }
     .lifestyle-strip { height: 260px; }
+    .city-thumb { height: 150px; }
     .faq-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
     .price-card { padding: 40px 28px; }
@@ -665,6 +706,8 @@
     .what-row { grid-template-columns: 1fr; }
     .what-row-num { font-size: 1.8rem; margin-bottom: 8px; }
     .nav-cta { font-size: 0.72rem; padding: 9px 16px; letter-spacing: 0.06em; }
+    .city-thumb { height: 120px; }
+    .city-name { font-size: 0.7rem; bottom: 12px; }
   }
 </style>
 </head>
@@ -678,8 +721,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <!-- hero-img div populated when hero image is added -->
-  <div class="hero-img" id="hero-bg"></div>
+  <div class="hero-img" id="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1619029807642-1eb86758cb97?fm=jpg&q=80&w=2400&auto=format&fit=crop');"></div>
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-eyebrow">Digital Nomad Intelligence &middot; Cyprus 2026</div>
@@ -795,9 +837,35 @@
 </section>
 
 <!-- LIFESTYLE IMAGE STRIP — image added when available -->
-<div class="lifestyle-strip" id="lifestyle-strip">
+<div class="lifestyle-strip" id="lifestyle-strip" style="background-image: url('https://images.unsplash.com/photo-1763801430061-d911401d2733?fm=jpg&q=80&w=2400&auto=format&fit=crop');">
   <div class="lifestyle-strip-label">Cyprus &mdash; where you&rsquo;ll be working next</div>
 </div>
+
+<!-- CITIES STRIP -->
+<section class="cities">
+  <div class="cities-inner">
+    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1639676347575-15b1e60ab6c2?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+      <div class="city-overlay"></div>
+      <span class="city-name">Limassol</span>
+    </div>
+    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1758789791158-71e81950f70f?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+      <div class="city-overlay"></div>
+      <span class="city-name">Paphos</span>
+    </div>
+    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1602521163379-79fba9eac5e6?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+      <div class="city-overlay"></div>
+      <span class="city-name">Larnaca</span>
+    </div>
+    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1531562388362-0cce62fa8b11?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+      <div class="city-overlay"></div>
+      <span class="city-name">Nicosia</span>
+    </div>
+    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1622632983419-53f7c2737d23?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+      <div class="city-overlay"></div>
+      <span class="city-name">Protaras</span>
+    </div>
+  </div>
+</section>
 
 <!-- CHANGE 1: WHAT YOU GET — editorial numbered list -->
 <section class="what">
