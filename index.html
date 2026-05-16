@@ -14,6 +14,7 @@
 <meta property="twitter:url" content="https://cyprusready.it.com">
 <meta property="twitter:title" content="CyprusReady &mdash; Personalised Relocation Reports for Digital Nomads">
 <meta property="twitter:description" content="Stop guessing. Get a personalised Cyprus relocation report covering your city, neighbourhood, costs, visa, and tax &mdash; delivered in minutes. &euro;19.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -693,8 +694,8 @@
     .problem-grid { grid-template-columns: 1fr; }
     .problem-col.bad { border-right: none; border-bottom: 1px solid var(--border); }
     .steps { grid-template-columns: 1fr; }
-    .what-row { grid-template-columns: 52px 1fr; gap: 0 24px; }
-    .what-row:nth-child(n) .what-row-content + .what-row-content { display: none; }
+    .what-row { grid-template-columns: 52px 1fr; gap: 16px 24px; }
+    .what-row-content { grid-column: 2; }
     .lifestyle-strip { height: 260px; }
     .city-thumb { height: 150px; }
     .faq-grid { grid-template-columns: 1fr; }
@@ -721,7 +722,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img" id="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1619029807642-1eb86758cb97?fm=jpg&q=80&w=2400&auto=format&fit=crop');"></div>
+  <div class="hero-img" id="hero-bg" style="background-image: url('/img/hero-bg.jpg');"></div>
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-eyebrow">Digital Nomad Intelligence &middot; Cyprus 2026</div>
@@ -837,30 +838,30 @@
 </section>
 
 <!-- LIFESTYLE IMAGE STRIP — image added when available -->
-<div class="lifestyle-strip" id="lifestyle-strip" style="background-image: url('https://images.unsplash.com/photo-1763801430061-d911401d2733?fm=jpg&q=80&w=2400&auto=format&fit=crop');">
+<div class="lifestyle-strip" id="lifestyle-strip" style="background-image: url('/img/lifestyle.jpg');">
   <div class="lifestyle-strip-label">Cyprus &mdash; where you&rsquo;ll be working next</div>
 </div>
 
 <!-- CITIES STRIP -->
 <section class="cities">
   <div class="cities-inner">
-    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1639676347575-15b1e60ab6c2?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+    <div class="city-thumb" style="background-image: url('/img/city-limassol.jpg');" role="img" aria-label="Limassol">
       <div class="city-overlay"></div>
       <span class="city-name">Limassol</span>
     </div>
-    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1758789791158-71e81950f70f?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+    <div class="city-thumb" style="background-image: url('/img/city-paphos.jpg');" role="img" aria-label="Paphos">
       <div class="city-overlay"></div>
       <span class="city-name">Paphos</span>
     </div>
-    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1602521163379-79fba9eac5e6?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+    <div class="city-thumb" style="background-image: url('/img/city-larnaca.jpg');" role="img" aria-label="Larnaca">
       <div class="city-overlay"></div>
       <span class="city-name">Larnaca</span>
     </div>
-    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1531562388362-0cce62fa8b11?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+    <div class="city-thumb" style="background-image: url('/img/city-nicosia.jpg');" role="img" aria-label="Nicosia">
       <div class="city-overlay"></div>
       <span class="city-name">Nicosia</span>
     </div>
-    <div class="city-thumb" style="background-image: url('https://images.unsplash.com/photo-1622632983419-53f7c2737d23?fm=jpg&q=80&w=800&auto=format&fit=crop');">
+    <div class="city-thumb" style="background-image: url('/img/city-protaras.jpg');" role="img" aria-label="Protaras">
       <div class="city-overlay"></div>
       <span class="city-name">Protaras</span>
     </div>
