@@ -526,6 +526,57 @@
   }
   .report-cta-overlay svg { color: var(--gold); flex-shrink: 0; }
 
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--navy-mid); padding: 100px 48px; }
+  .testimonials .section-label { color: var(--gold); }
+  .testimonials .section-label::before { background: var(--gold); }
+  .testimonials h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 56px;
+    line-height: 1.15;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+  .testimonial {
+    background: var(--navy-mid);
+    padding: 44px 36px;
+  }
+  .testimonial-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--gold);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .testimonial-quote {
+    font-size: 0.93rem;
+    line-height: 1.82;
+    color: rgba(255,255,255,0.62);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+  .testimonial-author strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .testimonial-author span {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.28);
+    font-weight: 300;
+  }
+
   /* ── CHANGE 5: PRICING — dark navy ── */
   .pricing { background: var(--navy); padding: 120px 48px; text-align: center; }
   .pricing .section-label { color: var(--gold); }
@@ -702,6 +753,8 @@
     .what-row-content { grid-column: 2; }
     .lifestyle-strip { height: 260px; }
     .city-thumb { height: 150px; }
+    .testimonial-grid { grid-template-columns: 1fr; gap: 1px; }
+    .testimonials { padding: 80px 24px; }
     .faq-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
     .price-card { padding: 40px 28px; }
@@ -965,6 +1018,46 @@
       <div class="report-cta-overlay">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         Full report unlocked after purchase &mdash; including Visa, Tax, Housing, Risks &amp; Next Steps
+      </div>
+      <div style="text-align:center; padding: 0 40px 32px;">
+        <a href="/sample-report.html" style="font-size:0.76rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+          View full sample report
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <span class="section-label reveal">What customers say</span>
+    <h2 class="reveal">Real people. Real decisions made.</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">Finally &mdash; a clear answer instead of 12 contradictory Reddit opinions. The neighbourhood breakdown alone was worth it. I knew exactly where to look before I booked a single flight.</p>
+        <div class="testimonial-author">
+          <strong>Alex M.</strong>
+          <span>Remote software engineer &middot; Amsterdam</span>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">I was stuck between Limassol and Paphos for weeks. The report made the decision obvious in one read. The cost breakdown matched what I actually ended up paying almost exactly.</p>
+        <div class="testimonial-author">
+          <strong>Sarah K.</strong>
+          <span>Freelance designer &middot; Berlin</span>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">The visa section saved me hours of research. Accurate, specific, and written for someone actually moving there &mdash; not a tourist. The Non-Dom tax overview alone was worth the &euro;19.</p>
+        <div class="testimonial-author">
+          <strong>James R.</strong>
+          <span>Independent consultant &middot; London</span>
+        </div>
       </div>
     </div>
   </div>
